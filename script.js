@@ -4,11 +4,12 @@ const containerMessage = document.getElementById('msgBox')
 const winAudio = new Audio('./sources/music.mp3')
 let chanceTakenCount = document.getElementById('chanceTaken')
 
+
 let randomNumber;
 let isGameOver = false;
 let chanceTaken = 0;
 
-function generateRandomNumber() {
+const generateRandomNumber = () => {
     let randomNumberGenerated = Math.floor(Math.random() * 51);
     randomNumber = randomNumberGenerated;
     console.log (randomNumber)
@@ -16,12 +17,13 @@ function generateRandomNumber() {
 
 generateRandomNumber()
 
-function throwAlert(message){
+const throwAlert = (message) => {
 
     containerMessage.innerHTML = ''; 
     const p = document.createElement('p');
     p.innerText = message;
     containerMessage.append(p);
+   
 }
 
 
@@ -34,8 +36,10 @@ submitBtn.addEventListener('click', () => {
 
 const wonImg = document.querySelector('.wonDiv')
 
-function checkInput() {
 
+const checkInput = () => {
+
+    
     if (isGameOver) {
         location.reload();
     }
@@ -78,9 +82,12 @@ function checkInput() {
         throwAlert('Game Over!, Your tries run out')
         submitBtn.innerText = 'Play Again'
         isGameOver = true;
-
-        document.getElementById('title').innerHTML = 'GAME OVER!'
+        document.getElementById('title').innerHTML = `GAME OVER! `
+        document.getElementById('reveal').style.display = 'flex'
+        document.getElementById('reveal').innerHTML = `The correct number is ${randomNumber} `
         document.querySelector('.container').style.backgroundColor = 'red';
     }
 }
+
+
 

@@ -38,10 +38,19 @@ body{
     font-size: 1.3rem;
 }
 
+#reveal{
+    text-align: center;
+    font-size: 1.4rem;
+    display: none;
+    font-weight: 800;
+    color: aliceblue;
+}
+
 .text-submit{
     display: flex;
     gap: 2px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
